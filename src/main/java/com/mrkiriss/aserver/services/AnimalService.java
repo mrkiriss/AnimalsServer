@@ -62,13 +62,13 @@ public class AnimalService {
                     (animal.getOwner().equals(owner) || owner.isBlank()) &&
                     (animal.getTypeAnimal().equals(typeAnimal) || typeAnimal.isBlank())
             ) preResult.add(animal);
-            System.out.println("----------------");
+            /*System.out.println("----------------");
             System.out.println("isSome "+(somethingIsPresentInAnimal(someInput, animal)));
             System.out.println("nearby "+(animalNearby(lat, lon, animal)));
             System.out.println("age "+(animal.getAge().equals(name) || age.isBlank()));
             System.out.println("breed "+(animal.getBreed().equals(breed) || breed.isBlank()));
             System.out.println("owner "+(animal.getOwner().equals(owner) || owner.isBlank()));
-            System.out.println("type "+(animal.getTypeAnimal().equals(typeAnimal) || typeAnimal.isBlank()));
+            System.out.println("type "+(animal.getTypeAnimal().equals(typeAnimal) || typeAnimal.isBlank()));*/
         }
         return preResult;
     }

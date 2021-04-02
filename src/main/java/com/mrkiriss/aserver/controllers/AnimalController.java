@@ -19,15 +19,6 @@ public class AnimalController {
     @Autowired
     private AnimalService animalService;
 
-    /*@GetMapping("/all")
-    public ResponseEntity getAnimals(){
-        try {
-            return ResponseEntity.ok(animalService.findAll());
-        }catch (Exception e){
-            return ResponseEntity.badRequest().body("Поиск всех животных провалился!");
-        }
-    }*/
-
     @GetMapping("/find")
     public ResponseEntity getAnimalsBySomeParams(@RequestParam Map<String,String> allParams){
         try {
@@ -38,8 +29,9 @@ public class AnimalController {
     }
 
     @PostMapping
-    public ResponseEntity addAnimal(@RequestBody Animal animal){
+    public ResponseEntity<String> addAnimal(@RequestBody Animal animal){
         try {
+            System.out.println("Запрос на добавление начат");
             animalService.addAnimal(animal);
             return ResponseEntity.ok("Животное успешно добавлено!");
         } catch (AnimalAlreadyExistException e){
@@ -48,8 +40,9 @@ public class AnimalController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity deleteAnimal(@PathVariable Long id){
+    public ResponseEntity<String> deleteAnimal(@PathVariable Long id){
         try{
+            System.out.println("Запрос на удаление начат");
             return ResponseEntity.ok(String.format("Животное с id=%d успешно удалено", animalService.deleteById(id)));
         }catch (Exception e){
             return ResponseEntity.badRequest().body(String.format("Удаление животного с id=%d провалилось", id));

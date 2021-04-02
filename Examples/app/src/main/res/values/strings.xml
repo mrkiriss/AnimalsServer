@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="click_me">Click me</string>
+    <string name="text">Hello!</string>
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyATYN71NJXwQdY8wGJifKI3O_k_7oNWGg4</string>
+</resources>
